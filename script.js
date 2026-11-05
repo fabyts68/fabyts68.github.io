@@ -61,3 +61,11 @@ if (typed && !reduce) {
   typed.textContent = '';
   setTimeout(tick, 900);
 }
+
+// faixa de tecnologias: repete a lista para o loop nunca mostrar espaço vazio
+const track = document.querySelector('.track');
+if (track && !reduce) {
+  const set = [...track.children];
+  for (let n = 0; n < 3; n++) set.forEach(el => track.appendChild(el.cloneNode(true)));
+  track.classList.add('loop');
+}
